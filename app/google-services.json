@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "403759638064",
+    "firebase_url": "https://tbc-course-11-default-rtdb.firebaseio.com",
+    "project_id": "tbc-course-11",
+    "storage_bucket": "tbc-course-11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403759638064:android:37cd4d3bdc769c9df1aff5",
+        "android_client_info": {
+          "package_name": "com.example.tbc_course_11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403759638064-r8dj1f429br3lj7307tqbv1jtm4bfnov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh6NeP6azFquQnB2MYO5d5wK8gADc8uvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403759638064-r8dj1f429br3lj7307tqbv1jtm4bfnov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
