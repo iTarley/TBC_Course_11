@@ -3,4 +3,8 @@
     <string name="email_address">Email Address</string>
     <string name="last_name">Last Name</string>
     <string name="name">Name</string>
+    <string name="add_user">Add User</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_last_name">Your Last Name</string>
+    <string name="your_email">Your Email Address</string>
 </resources>

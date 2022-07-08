@@ -19,8 +19,9 @@ import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
 
-    private val database = FirebaseDatabase.getInstance().getReference("User")
+    private val database = FirebaseDatabase.getInstance().getReference("/User")
     private lateinit var userArrayList: ArrayList<User>
+    private lateinit var adapterMain:RecyclerView
 
 
 
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+
+
+
 
         showUsers()
 
@@ -45,8 +50,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showUsers(){
-        val recycler = binding.mainRecycler
-        recycler.setHasFixedSize(true)
+        adapterMain = binding.mainRecycler
+        adapterMain.setHasFixedSize(true)
 
 
         userArrayList = arrayListOf<User>()
@@ -62,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                         val user = userSnapshot.getValue(User::class.java)
                         userArrayList.add(user!!)
                     }
-                    lateinit var adapterMain:RecyclerView
+
                     adapterMain.adapter = CustomAdapter(userArrayList)
                 }
 
@@ -76,32 +81,36 @@ class MainActivity : AppCompatActivity() {
 
     //TODO set custom dialog
     //TODO new Class for dialog/db
+    //TODO recreate animation
+    //TODO function for dialog add
+    //TODO ADD REMOVE BUTTON TO CARD_LAYOUT
+
 
     private fun dialog() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Title")
+        builder.setTitle(getString(R.string.add_user))
 
         val name = AppCompatEditText(this)
         val lastName = AppCompatEditText(this)
         val email = AppCompatEditText(this)
-
         val layout = LinearLayout(this)
+        
         layout.apply {
             orientation = LinearLayout.VERTICAL
 
         }
         name.apply {
             InputType.TYPE_CLASS_TEXT
-            hint = "Your Name"
+            hint = context.getString(R.string.your_name)
 
         }
         lastName.apply {
             inputType = InputType.TYPE_CLASS_TEXT
-            hint = "Your Last Name"
+            hint = context.getString(R.string.your_last_name)
         }
         email.apply {
             inputType = InputType.TYPE_CLASS_TEXT
-            hint = "Your Email Address"
+            hint = context.getString(R.string.your_email)
         }
 
         layout.addView(name)
@@ -114,6 +123,9 @@ class MainActivity : AppCompatActivity() {
             DialogInterface.OnClickListener { dialog, which ->
                 val userInfo = User(name.text.toString(),lastName.text.toString(),email.text.toString())
                 database.child("${name.text.toString()} + ${lastName.text.toString()}").setValue(userInfo)
+                this.recreate()
+
+
             })
         builder.setNegativeButton("Cancel",
             DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
