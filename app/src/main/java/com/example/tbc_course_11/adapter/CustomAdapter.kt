@@ -45,12 +45,6 @@ class CustomAdapter(private var dataSet: ArrayList<User>) :
         return dataSet.size
     }
 
-//    fun setData(newUserList: List<User>){
-//        val diffUtil = MyDiffUtil(dataSet,newUserList)
-//        val diffResults = DiffUtil.calculateDiff(diffUtil)
-//        dataSet = newUserList
-//        diffResults.dispatchUpdatesTo(this)
-//    }
 
     inner class ViewHolder(val binding: CardLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
