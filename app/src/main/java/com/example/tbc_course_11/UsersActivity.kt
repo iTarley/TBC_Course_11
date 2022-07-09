@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tbc_course_11.adapter.CustomAdapter
-import com.example.tbc_course_11.databinding.ActivityMainBinding
+import com.example.tbc_course_11.databinding.ActivityUsersBinding
 import com.example.tbc_course_11.models.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -19,12 +19,12 @@ class UsersActivity : AppCompatActivity() {
     private val database = FirebaseDatabase.getInstance().getReference("/User")
     private lateinit var userArrayList: ArrayList<User>
     private lateinit var adapterMain: RecyclerView
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityUsersBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityUsersBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
