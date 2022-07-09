@@ -19,9 +19,9 @@ class UsersActivity : AppCompatActivity() {
     private val database = FirebaseDatabase.getInstance().getReference("/User")
     private lateinit var userArrayList: ArrayList<User>
     private lateinit var adapterMain: RecyclerView
-
-
     private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -39,7 +39,6 @@ class UsersActivity : AppCompatActivity() {
 
 
     }
-
 
     private fun showUsers() {
         adapterMain = binding.mainRecycler
