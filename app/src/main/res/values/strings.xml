@@ -7,4 +7,9 @@
     <string name="your_name">Your Name</string>
     <string name="your_last_name">Your Last Name</string>
     <string name="your_email">Your Email Address</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="digits">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="update_user">Update user</string>
+    <string name="filled">All values must be filled</string>
 </resources>
